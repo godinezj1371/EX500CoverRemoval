@@ -19,6 +19,77 @@
       border-radius: 5px;
       font-family: Arial, sans-serif;
     }
+    #noteBox {
+      position: absolute;
+
+      top: 60px;
+      left: 10px;
+
+      width: 350px;
+
+      background: white;
+
+      padding: 10px;
+
+      border-radius: 5px;
+
+      font-family: Arial, sans-serif;
+
+      font-size: 14px;
+
+      box-shadow: 0 0 5px rgba(0,0,0,0.2);
+    }
+    #victoryMessage {
+      position: absolute;
+
+      top: 50%;
+      left: 50%;
+
+      transform: translate(-50%, -50%);
+
+      background: rgba(255,255,255,0.95);
+
+      padding: 30px 50px;
+
+      font-size: 36px;
+      font-weight: bold;
+
+      border-radius: 10px;
+
+      opacity: 0;
+
+      pointer-events: none;
+
+      transition: opacity 0.5s ease;
+    }
+
+    #victoryMessage.show {
+
+    opacity: 1;
+
+    animation: bounce 0.6s ease;
+    }
+
+    @keyframes bounce {
+
+    0% {
+      transform:
+        translate(-50%, -50%)
+        scale(0.5);
+    }
+
+    60% {
+      transform:
+        translate(-50%, -50%)
+        scale(1.15);
+    }
+
+    100% {
+      transform:
+        translate(-50%, -50%)
+        scale(1);
+    }
+    }
     #resetButton {
       position: absolute;
       top: 10px;
@@ -48,10 +119,17 @@
   Select a cover
 </div>
 
+<div id="noteBox">
+  Extra considerations will appear here.
+</div>
+
 <button id="resetButton">
   Reset
 </button>
 
+<div id="victoryMessage">
+  Congratulations! All covers are removed
+</div>
 
 </body>
 </html>
